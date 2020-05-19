@@ -10,9 +10,18 @@ dostarczy odpowiedz.
 Np. na http://localhost:5000/selectTable serwer odpowie plikiem select.html,
 a na http://localhost:5000/selectTable/auta serwer odpowie pakietem, w którym zawarta jest tabela auta.
 
+opis przykładowego endpointa
+app.get("/:table/:id", (req, res)=>{
+    res.sendFile(__dirname + "/public/main.html")
+})
+- get - wybór rodzaju zapytania alternatywnie moze to byc post, put, delete itp.
+- "/:table/:id" - sciezka, np. "/auta/1", dwukropek oznacza parametr, który można pobrać,
+np. req.params.table pobierze tabele auta
+- drugi parametr to funkcja, w której zarządzamy requestem i responsem
+
 2. connection.js 
 
-Ten plik odpowiada za stworzenie połączenia z bazą
+Ten plik odpowiada za stworzenie połączenia z bazą, opisuje je w innym dokumencie
 
 3. add.js
 
