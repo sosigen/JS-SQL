@@ -10,7 +10,7 @@
   <li>wypakuj do jednego folderu</li>
   <li>w tym folderze otworz terminal i uzyj komendy 'npm install'</li>
 </ul>
-<p>Włączenie serwera: w terminaly uzyj komendy 'npm run build' albo 'node server.js'</p>
+<p>Włączenie serwera: w terminalu uzyj komendy 'npm run build' albo 'node server.js'</p>
 
 <b>Opis działania znajduje się w pliku jak_to_dziala</b>
 
