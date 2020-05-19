@@ -1,6 +1,6 @@
 # JS-SQL
 program do zarządzania bazą danych. Używam do tego Node.js oraz frameworków mysql i express.js
-Express'a używam, bo jest dużo łatwiejszy w użyciu i analizie niż zwykły node
+Express'a używam, bo jest dużo łatwiejszy w użyciu i analizie niż zwykły node.
 
 Poprawne zaimportowanie:
 -zainstaluj node.js
