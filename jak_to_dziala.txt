@@ -18,6 +18,7 @@ app.get("/:table/:id", (req, res)=>{
 - "/:table/:id" - sciezka, np. "/auta/1", dwukropek oznacza parametr, który można pobrać,
 np. req.params.table pobierze tabele auta
 - drugi parametr to funkcja, w której zarządzamy requestem i responsem
+- __dirname - dodaje ścieżkę absolutną do względnej, którą podaje z palca (sendFile musi mieć ścieżkę absolutną)
 
 2. connection.js 
 
