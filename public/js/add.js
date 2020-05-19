@@ -47,7 +47,7 @@ class DBAddManager {
     let data = {};
     for (let i in inputs) {
         console.log(this.headers[i], inputs[i].value)
-      data[this.headers[i]] = inputs[i].value;
+        data[this.headers[i]] = inputs[i].value;
     }
     console.log(data)
     return data;
@@ -62,7 +62,10 @@ class DBAddManager {
         console.log(res);
         alert("rekord dodany");
       },
-      (err) => console.error(err)
+      (err) => {
+        console.error(err)
+        alert(err)
+      }
     );
   };
 }

@@ -42,7 +42,7 @@ class DBDelManager {
   };
 }
 const manager = new DBDelManager();
-for (link of document.querySelectorAll(".rect")) {
+for (link of document.querySelectorAll('.rect')) {
   link.addEventListener("click", function () {
     manager.generateForm(this.innerText);
   });

@@ -12,7 +12,7 @@ class Selector {
   }
   writeData() {
     let box = document.querySelector('.box')
-    box.innerHTML = '';
+    box.innerHTML = "";
     let table = document.createElement("table");
     let headers = Object.keys(this.data[0]);
     let colNames = document.createElement("tr");

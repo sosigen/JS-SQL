@@ -1,0 +1,50 @@
+Opisuje działanie tylko tych plików, które odpowiadają za logikę programu, a nie za interfejs graficzny
+
+1. server.js
+
+Na początku importuje wszystkie potrzebne pakiety (express i path).
+Ten plik odpowiada za sprawy serwerowe, zarządza endpointami i zapytaniami wysyłanymi przez użytkownika,
+nasłuchuje ruchu na porcie :5000.
+gdy na ten port przyjdzie jakieś zapytanie (GET, POST, DELETE), wtedy odpowiednio do otrzymanego urla
+dostarczy odpowiedz.
+Np. na http://localhost:5000/selectTable serwer odpowie plikiem select.html,
+a na http://localhost:5000/selectTable/auta serwer odpowie pakietem, w którym zawarta jest tabela auta.
+
+2. connection.js 
+
+Ten plik odpowiada za stworzenie połączenia z bazą
+
+3. add.js
+
+Ten plik odpowiada za dodawanie rekordów do bazy, a robi to z pomocą metod(funkcji):
+    -getHeaders: pobiera nagłówki, i liczbę kolumn dla wybranej tabeli,
+                 np. dla tabeli wypozyczenia pobierze 6 naglowkow:  	
+                 id, idklienta, idauta, datawyp, datazwrotu, naleznosc
+    -generateForm: generuje odpowiednia dla tabeli formę, do wpisania danych
+                   (dane otrzymuje z funkcji getHeaders)
+    -prepareData: pobiera dane z inputow i zmienia je w JS-owy obiekt, np.
+                  {id: 6,
+                   idklienta: 1,
+                   ...
+                   naleznosc: 200
+                  }
+    -sendData: wysyła zapytanie POST (fetch) do serwera, i zwraca sukces/błąd
+
+4. select.js
+
+Ten plik odpowiada za wyświetlanie zawartości trzech tabel, które są w bazie, z pomocą metod:
+    -getData: pobiera dane z pomocą fetch() z bazy, za pośrednictwem serwera
+    -writeData: tworzy tabelę z otrzymanymi danymi
+
+5. delete.js
+
+Ten plik odpowiada za usuwanie rekordów z baz. Używa do tego połączenia nazwy tabeli i id rekordu,
+który ma zostać usunięty. Używa do tego metod:
+    -generateForm: działa jak w pliku add.js z tym, że teraz tworzy tylko 1 pole, z id
+    -sendData: wysyła zapytanie DELETE do serwera, który wysyła odpowiednią kwerendę do bazy
+
+6. package.json
+
+To podstawowy plik informacyjny i konfiguracyjny node.js
+
+
